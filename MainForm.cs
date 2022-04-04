@@ -171,5 +171,15 @@ namespace OdrabiamyDownloaderForms
             }
             
         }
+
+        private async void sAMPLETEXTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using var client = new System.Net.Http.HttpClient()
+            {
+                BaseAddress =  new Uri(@"https://raw.githubusercontent.com/JakubCygaro/OdrabiamyDownloaderForms/master/LICENSE"),
+            };
+            MessageBox.Show(await client.GetStringAsync(client.BaseAddress), "LICENCJA", 
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

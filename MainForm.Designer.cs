@@ -286,8 +286,9 @@
             // sAMPLETEXTToolStripMenuItem
             // 
             this.sAMPLETEXTToolStripMenuItem.Name = "sAMPLETEXTToolStripMenuItem";
-            this.sAMPLETEXTToolStripMenuItem.Size = new System.Drawing.Size(91, 20);
-            this.sAMPLETEXTToolStripMenuItem.Text = "SAMPLE TEXT";
+            this.sAMPLETEXTToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.sAMPLETEXTToolStripMenuItem.Text = "Licencja";
+            this.sAMPLETEXTToolStripMenuItem.Click += new System.EventHandler(this.sAMPLETEXTToolStripMenuItem_Click);
             // 
             // MainForm
             // 
