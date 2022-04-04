@@ -54,6 +54,10 @@
             this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.sAMPLETEXTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gitHubToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.windowsFormsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bibliotekaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_End)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Start)).BeginInit();
@@ -276,7 +280,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sAMPLETEXTToolStripMenuItem});
+            this.sAMPLETEXTToolStripMenuItem,
+            this.gitHubToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(342, 24);
@@ -289,6 +294,37 @@
             this.sAMPLETEXTToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.sAMPLETEXTToolStripMenuItem.Text = "Licencja";
             this.sAMPLETEXTToolStripMenuItem.Click += new System.EventHandler(this.sAMPLETEXTToolStripMenuItem_Click);
+            // 
+            // gitHubToolStripMenuItem
+            // 
+            this.gitHubToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.windowsFormsToolStripMenuItem,
+            this.consoleToolStripMenuItem,
+            this.bibliotekaToolStripMenuItem});
+            this.gitHubToolStripMenuItem.Name = "gitHubToolStripMenuItem";
+            this.gitHubToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.gitHubToolStripMenuItem.Text = "GitHub";
+            // 
+            // windowsFormsToolStripMenuItem
+            // 
+            this.windowsFormsToolStripMenuItem.Name = "windowsFormsToolStripMenuItem";
+            this.windowsFormsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.windowsFormsToolStripMenuItem.Text = "Windows Forms";
+            this.windowsFormsToolStripMenuItem.Click += new System.EventHandler(this.windowsFormsToolStripMenuItem_Click);
+            // 
+            // consoleToolStripMenuItem
+            // 
+            this.consoleToolStripMenuItem.Name = "consoleToolStripMenuItem";
+            this.consoleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consoleToolStripMenuItem.Text = "Console";
+            this.consoleToolStripMenuItem.Click += new System.EventHandler(this.consoleToolStripMenuItem_Click);
+            // 
+            // bibliotekaToolStripMenuItem
+            // 
+            this.bibliotekaToolStripMenuItem.Name = "bibliotekaToolStripMenuItem";
+            this.bibliotekaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bibliotekaToolStripMenuItem.Text = "Biblioteka";
+            this.bibliotekaToolStripMenuItem.Click += new System.EventHandler(this.bibliotekaToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -349,5 +385,9 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem sAMPLETEXTToolStripMenuItem;
         private Button button_SaveImages;
+        private ToolStripMenuItem gitHubToolStripMenuItem;
+        private ToolStripMenuItem windowsFormsToolStripMenuItem;
+        private ToolStripMenuItem consoleToolStripMenuItem;
+        private ToolStripMenuItem bibliotekaToolStripMenuItem;
     }
 }

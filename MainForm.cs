@@ -172,14 +172,28 @@ namespace OdrabiamyDownloaderForms
             
         }
 
-        private async void sAMPLETEXTToolStripMenuItem_Click(object sender, EventArgs e)
+        private void sAMPLETEXTToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using var client = new System.Net.Http.HttpClient()
-            {
-                BaseAddress =  new Uri(@"https://raw.githubusercontent.com/JakubCygaro/OdrabiamyDownloaderForms/master/LICENSE"),
-            };
-            MessageBox.Show(await client.GetStringAsync(client.BaseAddress), "LICENCJA", 
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            System.Diagnostics.Process.Start("explorer", 
+                "https://raw.githubusercontent.com/JakubCygaro/OdrabiamyDownloaderForms/master/LICENSE");
+        }
+
+        private void windowsFormsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("explorer",
+                "https://github.com/JakubCygaro/OdrabiamyDownloaderForms");
+        }
+
+        private void consoleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("explorer",
+                "https://github.com/JakubCygaro/OdrabiamyDownloaderConsole");
+        }
+
+        private void bibliotekaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("explorer",
+                "https://github.com/JakubCygaro/OdrabiamyDownloader");
         }
     }
 }
