@@ -78,22 +78,18 @@ namespace OdrabiamyDownloaderForms
         {
             ButtonLock(false);
             _downloader.ChangeHeaders(Headers.NonPremium);
-            string? token;
-            int startpage;
-            int lastpage;
-            int bookid;
             try
             {
-                token = await _downloader.GetTokenAsync(textBox_Login.Text, textBox_Password.Text, 
+                string? token = await _downloader.GetTokenAsync(textBox_Login.Text, textBox_Password.Text, 
                     _ctoken);
-                startpage = (int)numericUpDown_Start.Value;
-                lastpage = (int)numericUpDown_End.Value;
-                bookid = int.Parse(textBox_ID.Text);
+                int startpage = (int)numericUpDown_Start.Value;
+                int lastpage = (int)numericUpDown_End.Value;
+                int bookid = int.Parse(textBox_ID.Text);
                 button_Download.Enabled = false;
                 if (checkBox_Premium.Checked)
                     await Premium(token ?? "", startpage, lastpage, bookid, _ctoken);
                 else
-                    await NonPremium(token ?? "", startpage, lastpage, bookid, _ctoken);
+                    await NonPremium(startpage, lastpage, bookid, _ctoken);
                 ButtonLock(true);
                 button_Download.Enabled = true;
             }
@@ -108,16 +104,16 @@ namespace OdrabiamyDownloaderForms
                     MessageBoxIcon.Error);
             }
         }
-        private async Task NonPremium(string token, int startpage, int lastpage, int bookid,
+        private async Task NonPremium(int startpage, int lastpage, int bookid,
             CancellationToken ctoken = default)
         {
-            _book = await _downloader.DownloadBookAsync(token, startpage, lastpage, bookid);
+            _book = await _downloader.DownloadBookAsync(startpage, lastpage, bookid);
         }
         private async Task Premium(string token, int startpage, int lastpage, int bookid, 
             CancellationToken ctoken = default)
         {
-            _downloader.ChangeHeaders(Headers.Premium);
-            _book = await _downloader.DownloadBookPremiumAsync(token, startpage, lastpage, bookid);
+            _downloader.ChangeHeaders(Headers.Premium, token);
+            _book = await _downloader.DownloadBookPremiumAsync(startpage, lastpage, bookid);
         }
 
         private async void button_SaveHTML_Click(object sender, EventArgs e)
@@ -144,10 +140,12 @@ namespace OdrabiamyDownloaderForms
             if (enabled)
             {
                 button_SaveHTML.Enabled = true;
+                button_SaveImages.Enabled = true;
             }
             else
             {
                 button_SaveHTML.Enabled = false;
+                button_SaveImages.Enabled = false;
             }
         }
 

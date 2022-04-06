@@ -232,6 +232,7 @@
             this.textBox_DownloadStatus.Multiline = true;
             this.textBox_DownloadStatus.Name = "textBox_DownloadStatus";
             this.textBox_DownloadStatus.ReadOnly = true;
+            this.textBox_DownloadStatus.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBox_DownloadStatus.Size = new System.Drawing.Size(319, 76);
             this.textBox_DownloadStatus.TabIndex = 1;
             // 
@@ -308,21 +309,21 @@
             // windowsFormsToolStripMenuItem
             // 
             this.windowsFormsToolStripMenuItem.Name = "windowsFormsToolStripMenuItem";
-            this.windowsFormsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.windowsFormsToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.windowsFormsToolStripMenuItem.Text = "Windows Forms";
             this.windowsFormsToolStripMenuItem.Click += new System.EventHandler(this.windowsFormsToolStripMenuItem_Click);
             // 
             // consoleToolStripMenuItem
             // 
             this.consoleToolStripMenuItem.Name = "consoleToolStripMenuItem";
-            this.consoleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consoleToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.consoleToolStripMenuItem.Text = "Console";
             this.consoleToolStripMenuItem.Click += new System.EventHandler(this.consoleToolStripMenuItem_Click);
             // 
             // bibliotekaToolStripMenuItem
             // 
             this.bibliotekaToolStripMenuItem.Name = "bibliotekaToolStripMenuItem";
-            this.bibliotekaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bibliotekaToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.bibliotekaToolStripMenuItem.Text = "Biblioteka";
             this.bibliotekaToolStripMenuItem.Click += new System.EventHandler(this.bibliotekaToolStripMenuItem_Click);
             // 
