@@ -58,6 +58,7 @@
             this.windowsFormsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bibliotekaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.checkBox_Whole = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_End)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Start)).BeginInit();
@@ -70,6 +71,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkBox_Whole);
             this.groupBox1.Controls.Add(this.button_Cancel);
             this.groupBox1.Controls.Add(this.checkBox_Premium);
             this.groupBox1.Controls.Add(this.button_Download);
@@ -327,6 +329,19 @@
             this.bibliotekaToolStripMenuItem.Text = "Biblioteka";
             this.bibliotekaToolStripMenuItem.Click += new System.EventHandler(this.bibliotekaToolStripMenuItem_Click);
             // 
+            // checkBox_Whole
+            // 
+            this.checkBox_Whole.AutoSize = true;
+            this.checkBox_Whole.Checked = true;
+            this.checkBox_Whole.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_Whole.Location = new System.Drawing.Point(22, 167);
+            this.checkBox_Whole.Name = "checkBox_Whole";
+            this.checkBox_Whole.Size = new System.Drawing.Size(75, 19);
+            this.checkBox_Whole.TabIndex = 13;
+            this.checkBox_Whole.Text = "Wszystko";
+            this.checkBox_Whole.UseVisualStyleBackColor = true;
+            this.checkBox_Whole.CheckedChanged += new System.EventHandler(this.checkBox_Whole_CheckedChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -390,5 +405,6 @@
         private ToolStripMenuItem windowsFormsToolStripMenuItem;
         private ToolStripMenuItem consoleToolStripMenuItem;
         private ToolStripMenuItem bibliotekaToolStripMenuItem;
+        private CheckBox checkBox_Whole;
     }
 }

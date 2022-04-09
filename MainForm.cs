@@ -107,13 +107,20 @@ namespace OdrabiamyDownloaderForms
         private async Task NonPremium(int startpage, int lastpage, int bookid,
             CancellationToken ctoken = default)
         {
-            _book = await _downloader.DownloadBookAsync(startpage, lastpage, bookid);
+            if(checkBox_Whole.Checked)
+                _book = await _downloader.DownloadBookAsync(bookid, ctoken);
+            else
+                _book = await _downloader.DownloadBookAsync(startpage, lastpage, bookid);
         }
         private async Task Premium(string token, int startpage, int lastpage, int bookid, 
             CancellationToken ctoken = default)
         {
             _downloader.ChangeHeaders(Headers.Premium, token);
-            _book = await _downloader.DownloadBookPremiumAsync(startpage, lastpage, bookid);
+            if (checkBox_Whole.Checked)
+                _book = await _downloader.DownloadBookPremiumAsync(bookid, ctoken);
+            else
+                _book = await _downloader.DownloadBookPremiumAsync(startpage, lastpage, bookid);
+
         }
 
         private async void button_SaveHTML_Click(object sender, EventArgs e)
@@ -192,6 +199,11 @@ namespace OdrabiamyDownloaderForms
         {
             System.Diagnostics.Process.Start("explorer",
                 "https://github.com/JakubCygaro/OdrabiamyDownloader");
+        }
+
+        private void checkBox_Whole_CheckedChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
